@@ -1,0 +1,27 @@
+// Auto stability test report
+CRON_SETTINGS = '''H(0-0) 17 * * *'''
+// CRON_SETTINGS = '''TZ=Asia/Shanghai H */2 * * *'''
+
+pipeline {
+    agent any
+    
+    triggers {
+        cron(CRON_SETTINGS)
+    }
+
+    environment {
+        PythonEnv = "C:\\Users\\ZIU7WX\\Desktop\\vta\\.venv\\Scripts\\python.exe"
+        Syncer = "C:\\Users\\ZIU7WX\\Desktop\\vta\\scripts\\rtcsync.py"
+    }
+
+    stages {
+        stage('Sync RTC') {
+            steps {
+                echo '========Start Syncer...========'
+                bat '''
+                    %PythonEnv% %Syncer%
+                '''
+            }
+        }
+    }
+}

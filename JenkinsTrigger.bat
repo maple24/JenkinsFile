@@ -1,0 +1,2 @@
+curl -I -u admin:11e8f3dfa2165b946af5484f7f23205cef http://wx-c-001tf.wx.apac.bosch.com:1111/view/GAC/job/Regression/buildWithParameters?token=RegressionToken
+curl -I -u admin:11e8f3dfa2165b946af5484f7f23205cef http://wx-c-001tf.wx.apac.bosch.com:1111/view/GAC/job/QVTa_SGH/build?token=QVTaToken
